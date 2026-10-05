@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AutoFactory - Sistema de gestión para la industria automotriz de Motores Eficientes S.A.">
+    <meta name="author" content="Brahyan Fernández Munera">
+
+    <!-- Favicon -->
+    <link rel="icon" href="recursos/imagenes/favicon/vehiculo.png" type="image/png">
+
+    <title>AutoFactory | Sistema de Gestión Automotriz</title>
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="recursos/css/estilos.css">
+
+    <!-- Font Awesome (íconos de redes sociales y otros) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ============================================================
+     BLOQUE: header
+     ============================================================ -->
+<header class="header">
+    <div class="header__logo">
+        <img src="recursos/imagenes/logos/factory.gif" alt="Logo AutoFactory" width="60">
+        <span class="header__brand">AutoFactory</span>
+    </div>
+
+    <nav class="header__nav nav" aria-label="Menú principal">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="#hero" class="nav__link nav__link--active">Inicio</a>
+            </li>
+            <li class="nav__item">
+                <a href="#modulos" class="nav__link">Módulos</a>
+            </li>
+            <li class="nav__item">
+                <a href="#beneficios" class="nav__link">Beneficios</a>
+            </li>
+            <li class="nav__item">
+                <a href="#planes" class="nav__link">Planes</a>
+            </li>
+            <li class="nav__item">
+                <a href="#contacto" class="nav__link">
+                    <i class="fa-solid fa-envelope"></i> Contacto
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <a href="https://wa.me/573001234567"
+       class="whatsapp-float"
+       target="_blank"
+       aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</header>
+
+<main>
+
+    <!-- ============================================================
+         BLOQUE: hero
+         ============================================================ -->
+    <section id="hero" class="hero">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <h1 class="hero__title">Sistema de gestión para la industria automotriz</h1>
+            <p class="hero__subtitle">
+                Controla líneas de producción, órdenes, calidad, inventario y
+                ensamblaje final de vehículos en una sola plataforma.
+            </p>
+            <div class="hero__actions">
+                <a href="#planes" class="button button--primary button--large">Ver planes</a>
+                <a href="#contacto" class="button button--outline button--large">Solicitar demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         BLOQUE: features (módulos del sistema)
+         ============================================================ -->
+    <section id="modulos" class="features">
+        <h2 class="features__title">Módulos del sistema</h2>
+
+        <div class="features__grid">
+
+            <article class="feature-card feature-card--featured">
+                <span class="feature-card__icon">🏭</span>
+                <h3 class="feature-card__title">Producción y ensamblaje</h3>
+                <p class="feature-card__description">
+                    Administra líneas, estaciones de trabajo, turnos y el
+                    ensamblaje final de cada vehículo por VIN.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-card__icon">📋</span>
+                <h3 class="feature-card__title">Órdenes y modelos</h3>
+                <p class="feature-card__description">
+                    Gestiona modelos (sedán, SUV, pickup), versiones,
+                    especificaciones y órdenes de producción por prioridad.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-card__icon">✅</span>
+                <h3 class="feature-card__title">Control de calidad</h3>
+                <p class="feature-card__description">
+                    Registra inspecciones, parámetros, defectos y decisiones
+                    finales por cada vehículo ensamblado.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-card__icon">📦</span>
+                <h3 class="feature-card__title">Inventario y componentes</h3>
+                <p class="feature-card__description">
+                    Controla stock mínimo, proveedores, tiempos de entrega y
+                    calidad de cada componente o parte.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-card__icon">🧑‍🏭</span>
+                <h3 class="feature-card__title">Empleados</h3>
+                <p class="feature-card__description">
+                    Registra operarios, especializaciones, habilidades,
+                    línea asignada y evaluación de desempeño.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-card__icon">🚚</span>
+                <h3 class="feature-card__title">Compras y proveedores</h3>
+                <p class="feature-card__description">
+                    Gestiona órdenes de compra, condiciones de pago, tiempos
+                    de entrega y evaluación de proveedores.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         BLOQUE: testimonials (casos de éxito)
+         ============================================================ -->
+    <section id="beneficios" class="testimonials">
+        <h2 class="testimonials__title">Resultados en planta</h2>
+
+        <div class="testimonials__grid">
+
+            <article class="testimonial testimonial--featured">
+                <img class="testimonial__avatar"
+                     src="https://picsum.photos/80/80?random=1"
+                     alt="Avatar de Ing. Carlos Pérez">
+                <h3 class="testimonial__name">Ing. Carlos Pérez</h3>
+                <p class="testimonial__role">Jefe de Producción</p>
+                <p class="testimonial__comment">
+                    "Redujimos el tiempo de ensamblaje un 22% en la línea
+                    de SUV tras 6 meses usando AutoFactory."
+                </p>
+            </article>
+
+            <article class="testimonial">
+                <img class="testimonial__avatar"
+                     src="https://picsum.photos/80/80?random=2"
+                     alt="Avatar de Laura Gómez">
+                <h3 class="testimonial__name">Laura Gómez</h3>
+                <p class="testimonial__role">Coordinadora de Calidad</p>
+                <p class="testimonial__comment">
+                    "El control de inspecciones por VIN nos permitió
+                    detectar defectos recurrentes al instante."
+                </p>
+            </article>
+
+            <article class="testimonial">
+                <img class="testimonial__avatar"
+                     src="https://picsum.photos/80/80?random=3"
+                     alt="Avatar de Andrés Ruiz">
+                <h3 class="testimonial__name">Andrés Ruiz</h3>
+                <p class="testimonial__role">Supervisor de Almacén</p>
+                <p class="testimonial__comment">
+                    "Ahora controlamos el stock mínimo de componentes sin
+                    parar la línea por faltantes."
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         BLOQUE: pricing (planes)
+         ============================================================ -->
+    <section id="planes" class="pricing">
+        <h2 class="pricing__title">Planes según el tamaño de tu planta</h2>
+
+        <div class="pricing__grid">
+
+            <article class="pricing-card">
+                <h3 class="pricing-card__name">Planta Básica</h3>
+                <p class="pricing-card__price">
+                    $1.500.000<span class="pricing-card__period">/mes</span>
+                </p>
+                <ul class="pricing-card__features">
+                    <li class="pricing-card__feature">1 línea de producción</li>
+                    <li class="pricing-card__feature">Hasta 20 operarios</li>
+                    <li class="pricing-card__feature">Control de inventario</li>
+                    <li class="pricing-card__feature">Soporte por email</li>
+                </ul>
+                <button class="button button--outline-dark button--block">Elegir Básica</button>
+            </article>
+
+            <article class="pricing-card pricing-card--featured">
+                <span class="pricing-card__badge">Recomendado</span>
+                <h3 class="pricing-card__name">Planta Profesional</h3>
+                <p class="pricing-card__price">
+                    $3.200.000<span class="pricing-card__period">/mes</span>
+                </p>
+                <ul class="pricing-card__features">
+                    <li class="pricing-card__feature">Hasta 5 líneas</li>
+                    <li class="pricing-card__feature">Hasta 200 operarios</li>
+                    <li class="pricing-card__feature">Control de calidad por VIN</li>
+                    <li class="pricing-card__feature">Órdenes de compra y proveedores</li>
+                    <li class="pricing-card__feature">Soporte prioritario</li>
+                </ul>
+                <button class="button button--primary button--block">Elegir Profesional</button>
+            </article>
+
+            <article class="pricing-card">
+                <h3 class="pricing-card__name">Planta Empresarial</h3>
+                <p class="pricing-card__price">
+                    $6.500.000<span class="pricing-card__period">/mes</span>
+                </p>
+                <ul class="pricing-card__features">
+                    <li class="pricing-card__feature">Líneas ilimitadas</li>
+                    <li class="pricing-card__feature">Operarios ilimitados</li>
+                    <li class="pricing-card__feature">Integración con ERP</li>
+                    <li class="pricing-card__feature">Reportes avanzados</li>
+                    <li class="pricing-card__feature">Gestor de cuenta dedicado</li>
+                </ul>
+                <button class="button button--outline-dark button--block">Elegir Empresarial</button>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         BLOQUE: contact-form
+         ============================================================ -->
+    <section id="contacto" class="contact">
+        <form class="contact-form" novalidate>
+            <h2 class="contact-form__title">Solicita una demo</h2>
+
+            <div class="contact-form__field">
+                <label class="contact-form__label" for="nombre">Nombre:</label>
+                <input type="text" id="nombre" class="contact-form__input" required>
+            </div>
+
+            <div class="contact-form__field contact-form__field--error">
+                <label class="contact-form__label" for="email">Email corporativo:</label>
+                <input type="email" id="email" class="contact-form__input" required>
+                <span class="contact-form__error-message">Email inválido</span>
+            </div>
+
+            <div class="contact-form__field">
+                <label class="contact-form__label" for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" class="contact-form__textarea" required></textarea>
+            </div>
+
+            <button type="submit"
+                    class="contact-form__submit button button--primary button--block">
+                Enviar solicitud
+            </button>
+
+            <button type="button"
+                    class="contact-form__submit contact-form__submit--disabled button button--block"
+                    disabled>
+                Enviar (deshabilitado)
+            </button>
+        </form>
+    </section>
+
+</main>
+
+<!-- ============================================================
+     BLOQUE: footer
+     ============================================================ -->
+<footer class="footer">
+    <div class="footer__content">
+
+        <div class="footer__column">
+            <h3 class="footer__title">AutoFactory</h3>
+            <p class="footer__text">
+                Sistema de gestión para Motores Eficientes S.A.
+            </p>
+        </div>
+
+        <div class="footer__column">
+            <h3 class="footer__title">Navegación</h3>
+            <ul class="footer__list">
+                <li><a href="#hero" class="footer__link">Inicio</a></li>
+                <li><a href="#modulos" class="footer__link">Módulos</a></li>
+                <li><a href="#planes" class="footer__link">Planes</a></li>
+                <li><a href="#contacto" class="footer__link">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__column">
+            <h3 class="footer__title">Contacto</h3>
+            <address class="footer__address">
+                Envigado, Antioquia<br>
+                Tel: (604) 444 4560<br>
+                info@autofactory.com
+            </address>
+        </div>
+
+        <div class="footer__column">
+            <h3 class="footer__title">Síguenos</h3>
+            <ul class="footer__social">
+                <li>
+                    <a href="#" class="footer__social-link" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer__social-link" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer__social-link" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <p class="footer__copyright">
+        <small>&copy; 2026 AutoFactory. Todos los derechos reservados.</small>
+    </p>
+</footer>
+
+</body>
+</html>

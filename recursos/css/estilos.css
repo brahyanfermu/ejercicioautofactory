@@ -1,0 +1,438 @@
+/* ============================================================
+   1. VARIABLES GLOBALES Y RESET
+   ============================================================ */
+:root {
+    --color-primario:    #e63946;
+    --color-secundario:  #121441;
+    --color-acento:      #f1c40f;
+    --color-texto:       #2b2d42;
+    --color-fondo:       #f4f6f9;
+    --color-blanco:      #ffffff;
+    --color-gris:        #8d99ae;
+    --color-exito:       #2ecc71;
+    --color-error:       #e74c3c;
+
+    --radio:   10px;
+    --sombra:  0 2px 8px rgba(0, 0, 0, 0.1);
+    --transicion: 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+
+/* ============================================================
+   2. BLOQUE: button
+   ============================================================ */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radio);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background var(--transicion), transform 0.2s;
+}
+
+.button--primary { background: var(--color-primario); color: var(--color-blanco); }
+.button--primary:hover { background: #c1121f; }
+
+.button--outline {
+    background: transparent;
+    color: var(--color-blanco);
+    border: 2px solid var(--color-blanco);
+}
+.button--outline:hover { background: var(--color-blanco); color: var(--color-secundario); }
+
+.button--outline-dark {
+    background: transparent;
+    color: var(--color-secundario);
+    border: 2px solid var(--color-secundario);
+}
+.button--outline-dark:hover { background: var(--color-secundario); color: var(--color-blanco); }
+
+.button--large { padding: 15px 30px; font-size: 18px; }
+.button--block { display: block; width: 100%; }
+
+
+/* ============================================================
+   3. BLOQUE: header + nav
+   ============================================================ */
+.header {
+    background: linear-gradient(135deg, var(--color-secundario), #0b1a2e);
+    color: var(--color-blanco);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__logo { display: flex; align-items: center; gap: 12px; }
+.header__logo img { border-radius: 50%; }
+.header__brand { font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; }
+
+.nav__list { list-style: none; display: flex; gap: 10px; flex-wrap: wrap; }
+
+.nav__link {
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background var(--transicion);
+}
+.nav__link:hover { background: var(--color-primario); }
+.nav__link--active { background: var(--color-primario); }
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: transform 0.3s;
+}
+.whatsapp-float:hover { transform: scale(1.1); }
+
+
+/* ============================================================
+   4. BLOQUE: hero
+   ============================================================ */
+.hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('../imagenes/galeria/fabrica.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    padding: 60px 20px;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 20, 65, 0.6);
+}
+
+.hero__content { position: relative; z-index: 1; max-width: 850px; }
+.hero__title { font-size: 2.8rem; margin-bottom: 20px; line-height: 1.2; }
+.hero__subtitle { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95; }
+.hero__actions { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+
+/* ============================================================
+   5. BLOQUE: features + feature-card
+   ============================================================ */
+.features { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+
+.features__title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-secundario);
+    margin-bottom: 40px;
+}
+
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.feature-card {
+    background: var(--color-blanco);
+    padding: 30px 25px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    text-align: center;
+    transition: transform var(--transicion);
+}
+.feature-card:hover { transform: translateY(-5px); }
+
+.feature-card__icon { font-size: 3rem; display: block; margin-bottom: 15px; }
+.feature-card__title { font-size: 1.25rem; color: var(--color-secundario); margin-bottom: 10px; }
+.feature-card__description { color: var(--color-gris); font-size: 0.95rem; }
+
+.feature-card--featured {
+    border: 3px solid var(--color-primario);
+    background: #fff5f5;
+    transform: scale(1.03);
+}
+
+
+/* ============================================================
+   6. BLOQUE: testimonials + testimonial
+   ============================================================ */
+.testimonials { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+
+.testimonials__title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-secundario);
+    margin-bottom: 40px;
+}
+
+.testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.testimonial {
+    background: var(--color-blanco);
+    padding: 25px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.testimonial__avatar {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    object-fit: cover;
+}
+.testimonial__name { font-size: 1.1rem; color: var(--color-secundario); }
+.testimonial__role { font-size: 0.85rem; color: var(--color-gris); margin-bottom: 12px; }
+.testimonial__comment { font-style: italic; color: var(--color-texto); }
+
+.testimonial--featured { background: var(--color-secundario); color: var(--color-blanco); }
+.testimonial--featured .testimonial__name,
+.testimonial--featured .testimonial__comment { color: var(--color-blanco); }
+.testimonial--featured .testimonial__role { color: var(--color-acento); }
+
+
+/* ============================================================
+   7. BLOQUE: pricing + pricing-card
+   ============================================================ */
+.pricing { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+
+.pricing__title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-secundario);
+    margin-bottom: 40px;
+}
+
+.pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background: var(--color-blanco);
+    padding: 30px 25px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.pricing-card__name { font-size: 1.4rem; color: var(--color-secundario); margin-bottom: 10px; }
+.pricing-card__price { font-size: 2rem; font-weight: 700; color: var(--color-primario); margin-bottom: 20px; }
+.pricing-card__period { font-size: 1rem; color: var(--color-gris); font-weight: 400; }
+
+.pricing-card__features { list-style: none; margin-bottom: 25px; flex-grow: 1; }
+.pricing-card__feature { padding: 8px 0; border-bottom: 1px solid #eee; }
+.pricing-card__feature::before { content: "✓ "; color: var(--color-exito); font-weight: bold; }
+
+.pricing-card__badge {
+    position: absolute;
+    top: -12px; right: 20px;
+    background: var(--color-acento);
+    color: var(--color-secundario);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.pricing-card--featured {
+    border: 3px solid var(--color-primario);
+    transform: scale(1.04);
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25);
+}
+
+
+/* ============================================================
+   8. BLOQUE: contact + contact-form
+   ============================================================ */
+.contact { max-width: 700px; margin: 60px auto; padding: 0 20px; }
+
+.contact-form {
+    background: var(--color-blanco);
+    padding: 35px 30px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.contact-form__title { color: var(--color-secundario); margin-bottom: 25px; text-align: center; }
+.contact-form__field { margin-bottom: 20px; }
+.contact-form__label { display: block; margin-bottom: 6px; font-weight: 600; color: var(--color-secundario); }
+
+.contact-form__input,
+.contact-form__textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color var(--transicion);
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 6px rgba(230, 57, 70, 0.4);
+}
+
+.contact-form__textarea { min-height: 120px; resize: vertical; }
+
+.contact-form__error-message {
+    display: none;
+    color: var(--color-error);
+    font-size: 0.85rem;
+    margin-top: 6px;
+}
+
+.contact-form__field--error .contact-form__input { border-color: var(--color-error); }
+.contact-form__field--error .contact-form__error-message { display: block; }
+
+.contact-form__submit { margin-top: 10px; }
+
+.contact-form__submit--disabled {
+    background: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+/* ============================================================
+   9. BLOQUE: footer
+   ============================================================ */
+.footer {
+    background: var(--color-secundario);
+    color: var(--color-blanco);
+    padding: 50px 20px 20px;
+    margin-top: 60px;
+}
+
+.footer__content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.footer__title { font-size: 1.1rem; margin-bottom: 15px; color: var(--color-acento); }
+.footer__text, .footer__address { font-size: 0.9rem; line-height: 1.7; font-style: normal; }
+.footer__list, .footer__social { list-style: none; }
+
+.footer__link {
+    color: var(--color-blanco);
+    text-decoration: none;
+    display: inline-block;
+    padding: 4px 0;
+    transition: color var(--transicion);
+}
+.footer__link:hover { color: var(--color-acento); }
+
+.footer__copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0.8;
+}
+
+/* Footer: íconos sociales redondos */
+.footer__social {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-blanco);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background var(--transicion), transform var(--transicion);
+}
+
+.footer__social-link:hover {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    transform: translateY(-3px);
+}
+
+
+/* ============================================================
+   10. RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .header { flex-direction: column; padding: 15px 20px; }
+    .nav__list { justify-content: center; }
+    .hero__title { font-size: 2rem; }
+    .hero__subtitle { font-size: 1rem; }
+    .features__title,
+    .testimonials__title,
+    .pricing__title { font-size: 1.5rem; }
+    .feature-card--featured,
+    .pricing-card--featured { transform: none; }
+    .footer__content { grid-template-columns: 1fr; text-align: center; }
+    .footer__social { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .hero { min-height: 60vh; padding: 40px 15px; }
+    .hero__title { font-size: 1.6rem; }
+    .button--large { padding: 12px 20px; font-size: 1rem; }
+    .contact-form { padding: 25px 20px; }
+}
